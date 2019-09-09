@@ -72,12 +72,16 @@ the output are 4 plots that are appended to "res.txt" that you can insert
 them all in "plot_test.m" to see the results (uses uiaxes.m).
 
 the result of those tests - at least in my machine, running windows10/VC10 - 
-(test B) UDU' has a clear advantage over UDV' on large matrices; 
-(test D) but in small matrices as in the DLT 12x12 case, the results are mixed: 
-UDV' is better in 64bits both full optimization and 32-64bit without, and UDU'
-is better with optimization on 32bits. 
-(test A) for the generation of the DLT symmetric A'A matrix is always better 
-to do it manually in a loop and copy the upper triangle to the lower instead of 
-creating the DLT A matrix in a loop and calling for doing a product with the transpose of A.
 
- 
+	(test B) UDU' has a clear advantage over UDV' on large matrices; 
+
+	(test D) but in small matrices as in the DLT 12x12 case, the results are mixed: 
+
+	UDV' is better in 64bits both full optimization and 32-64bit without, and UDU'
+	is better with optimization on 32bits. 
+
+	(test A) for the generation of the DLT symmetric A'A matrix is always better 
+	to do it manually in a loop and copy the upper triangle to the lower instead of 
+	creating the DLT A matrix in a loop and calling for doing a product with the transpose of A.
+
+
