@@ -18,10 +18,11 @@ elements that form the transformation matrix. DLT is used to find R|T and homogr
 get a matrix A with 2Nx12 elements, in the second case, a matrix A with 2Nx9 elements, both 
 with a wellknow format. Moreover, this Ax = 0 can be solved in the least square sense, by 
 finding a solution for the null space of A'A instead of A, requiring the A'A (9x9 or 12x12) 
-product and followed by a UDU' decomposition to get a solution. However doing that product 
-isn't necessary programatly (you had to generate the full A matrix that is, 2Nx9 or 2Nx12 before the 
-transpose product). Once you know the format of A'A, it is possible to generate the upper 
-triangle of the 9x9 or 12x12 A'A, and copying those elements the lower triangle.
+product and followed by a UDU' decomposition to get a solution, from U'. 
+However programmatically, isn't necessary explicitly to dothis product (you had to generate the 
+full A matrix, that is, 2Nx9 or 2Nx12 before the making the transpose product). 
+Once you know the format of A'A, it is possible to generate the upper triangle of the
+9x9 or 12x12 A'A, and copying those elements to the lower triangle.
 
 Here, i test the generation of A'A and factorization of symmetric matrices as in opencv.
 This test, comes from a personal question, why in opencv,
