@@ -8,8 +8,8 @@
 //     and/or other materials provided with the distribution.
 // for OpenCV licence check the attached files
 
-// Tests the generation and factorization of symmetric matrices with the opencv
-// functions/ specific for the DLT 9x9 and 12x12 system.
+Tests the generation and factorization of symmetric matrices with the opencv
+functions / specific for the DLT 9x9 and 12x12 system.
 warning: only tested with visual studio 10, but would be fine in linux
 (clock.hpp changes on both systems)
 tests:
