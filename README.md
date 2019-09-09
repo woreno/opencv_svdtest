@@ -8,28 +8,17 @@
 //     and/or other materials provided with the distribution.
 // for OpenCV licence check the attached files
 
-Tests the generation and factorization of symmetric matrices with the opencv
-functions / specific for the DLT 9x9 and 12x12 system.
-warning: only tested with visual studio 10, but would be fine in linux
-(clock.hpp changes on both systems)
+Direct Linear Transform (DLT) is method to recover the rotation and translation of object vectors 
+relative to a projector where they had been projected. With both object vectors and the 
+projection vectors on the projection plane, through an cross product relation between both, 
+is possible to reach a homogeneous linear system Ax = 0, where x are the elements that form 
+the transformation matrix. DLT is used to find R|T and homography 
+(an R|T where the vectors object are fixed on a plane) matrices. More over, this Ax = 0
+can be solved in the least square sense, by finding the null space of A'A instead of A,
+requiring the A'A product and followed by a decomposition.
 
-tests:
-
-        A. gen DLT 12x12 symmetric matrixes
-		
-        B. gen generic nxn symmetric matrixes, and run UDU', UDV' 
-		
-        C. gen DLT 9x9, 12x12 symmetric matrixes, and run UDU', UDV'
-		
-        D. gen DLT 12x12 for n points, and run UDU', UDV'
-		
-
-this test requires opencv and uses opencv "lapack.cpp" functions; 
-almost all functions of the interest here, have been renamed with a posfix underscore
-and located in blas.hpp (math) and udut_givens.hpp, udvt_givens.hpp (for decompositions)
-in order to be called, tested, and compiled inline and with optimization flags altogether.
-other opencv structures and functions not used, eg. cv::Mat, cv::Size, cv::InputArray
-are using the normal cv:: interface.
+Here, i test the generation of A'A and factorization of symmetric matrices as
+in opencv.
 
 This test, comes from a personal question, why in opencv, 
 
@@ -51,6 +40,27 @@ This test, comes from a personal question, why in opencv,
        (anyway cvMulTransposed will call cvCompleteSymm)
         - the DLT 12x12 triangle can be created manually as in the 9x9 case (as in runKernel)  .
 
+tests:
+
+        A. gen DLT 12x12 symmetric matrixes
+		
+        B. gen generic nxn symmetric matrixes, and run UDU', UDV' 
+		
+        C. gen DLT 9x9, 12x12 symmetric matrixes, and run UDU', UDV'
+		
+        D. gen DLT 12x12 for n points, and run UDU', UDV'
+		
+
+warning: only tested with visual studio 10, but would be fine in linux
+(clock.hpp changes on both systems)
+this test requires opencv and uses opencv "lapack.cpp" functions; 
+almost all functions of the interest here, have been renamed with a posfix underscore
+and located in blas.hpp (math) and udut_givens.hpp, udvt_givens.hpp (for decompositions)
+in order to be called, tested, and compiled inline and with optimization flags altogether.
+other opencv structures and functions not used, eg. cv::Mat, cv::Size, cv::InputArray
+are using the normal cv:: interface.
+
+
 USE:
   #define USE_FP32 if you want to used floats instead of doubles
 
@@ -68,10 +78,6 @@ and 32-64bit without, and UDU' is better with optimization on 32bits.
 (A) for the generation of the symmetric X'X DLT system is always better to do it manually in a loop and 
 copy the upper triangle instead of creating the DLT X system in a loop and calling for doing a product
 with the transpose of X.
-
-
-
-
 
 
 
