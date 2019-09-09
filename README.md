@@ -82,6 +82,6 @@ the result of those tests - at least in my machine, running windows10/VC10 -
 
 	(test A) for the generation of the DLT symmetric A'A matrix is always better 
 	to do it manually in a loop and copy the upper triangle to the lower instead of 
-	creating the DLT A matrix in a loop and calling for doing a product with the transpose of A.
+	creating the DLT A matrix in a loop and calling for doing a product with its transpose.
 
 
