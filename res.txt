@@ -1,0 +1,132 @@
+
+
+ % - config: VC10 not opt. fp32 ---------------------------------------------
+
+
+ figure(); h = uiaxes([1 4], 'border', .09);
+
+% DTL symm gen/VC10 not opt. fp32(10 sets of 80 reps per n. points)
+teste0 = [2.530747,5.111158,8.121567,10.848484,13.733494,16.544424,19.474545,22.126553,25.349272,27.940443 ];
+teste1 = [5.441003,8.400922,12.621869,15.754781,20.318403,24.139562,27.433052,31.400717,35.014533,38.927569 ];
+ x = [5,15,25,35,45,55,65,75,85,95 ];
+axes(h(1,1)); plt_('DTL symm gen/VC10 not opt. fp32(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm','DTL w MultTranspose','n. points');
+
+
+% Full Symm factorization/VC10 not opt. fp32(10 sets of 80 reps per matrix size)
+teste0 = [14.423397,202.684090,561.964115,1235.266209,2280.611736,3521.421999,5332.671380,7551.601998 ];
+teste1 = [9.615598,190.869246,771.618003,2106.122612,4472.888599,8254.687035,14292.337270,23995.793290 ];
+ x = [5,15,25,35,45,55,65,75 ];
+axes(h(1,2)); plt_('Full Symm factorization/VC10 not opt. fp32(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% Symm factor. w zero blks/VC10 not opt. fp32(10 sets of 80 reps per matrix size)
+teste0 = [151.203767,361.239233 ];
+teste1 = [46.030630,106.549632 ];
+ x = [9,12 ];
+axes(h(1,3)); plt_('Symm factor. w zero blks/VC10 not opt. fp32(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% DTL homogeneous system/VC10 not opt. fp32(10 sets of 80 reps per n. points)
+teste0 = [202.212705,135.598803,185.115780,249.215903,265.147816,162.525705,188.338499,279.487199,109.267443,305.880223,322.170124,301.856687,293.147854,225.550209,262.177964,211.301047,214.907413,306.399616,283.721803,308.218526 ];
+teste1 = [270.796990,749.731074,249.947605,91.200019,103.806989,742.162009,91.077103,125.426151,754.875755,125.698470,97.082195,300.204976,148.992518,279.502926,316.085984,264.536546,115.125202,130.138348,782.345226,301.039316 ];
+ x = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100 ];
+axes(h(1,4)); plt_('DTL homogeneous system/VC10 not opt. fp32(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm + UDUt','DTL w MultTranspose + UDVt','n. points');
+
+
+ % - config: VC10 not opt. fp64 ---------------------------------------------
+
+
+ figure(); h = uiaxes([1 4], 'border', .09);
+
+% DTL symm gen/VC10 not opt. fp64(10 sets of 80 reps per n. points)
+teste0 = [4.661707,8.565224,11.445268,13.682176,16.126012,23.369371,25.203594,28.609239,33.260599,34.433061 ];
+teste1 = [7.883598,13.104429,16.719900,19.486133,25.291332,32.641052,36.120364,43.722952,45.721477,48.243947 ];
+ x = [5,15,25,35,45,55,65,75,85,95 ];
+axes(h(1,1)); plt_('DTL symm gen/VC10 not opt. fp64(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm','DTL w MultTranspose','n. points');
+
+
+% Full Symm factorization/VC10 not opt. fp64(10 sets of 80 reps per matrix size)
+teste0 = [22.688573,310.080477,829.191571,1779.887980,3081.891835,4966.650421,7039.618382,10009.408668 ];
+teste1 = [12.453842,302.414155,1256.354390,3653.899892,7440.162210,13210.078425,22248.797160,36267.598109 ];
+ x = [5,15,25,35,45,55,65,75 ];
+axes(h(1,2)); plt_('Full Symm factorization/VC10 not opt. fp64(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% Symm factor. w zero blks/VC10 not opt. fp64(10 sets of 80 reps per matrix size)
+teste0 = [196.694310,476.803539 ];
+teste1 = [58.211325,140.600287 ];
+ x = [9,12 ];
+axes(h(1,3)); plt_('Symm factor. w zero blks/VC10 not opt. fp64(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% DTL homogeneous system/VC10 not opt. fp64(10 sets of 80 reps per n. points)
+teste0 = [485.586453,531.000019,513.265337,516.154072,541.770283,552.383695,530.956150,519.820862,551.513763,541.413537,516.786448,549.800388,541.048927,543.716662,530.655688,537.623003,549.235470,552.112203,547.032085,557.092168 ];
+teste1 = [139.374851,125.576381,128.595482,158.123074,153.808595,164.345856,162.638688,149.076946,171.930235,160.171675,168.359460,167.988642,164.222940,171.531275,168.316005,174.206045,169.411489,174.260674,186.165326,186.497654 ];
+ x = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100 ];
+axes(h(1,4)); plt_('DTL homogeneous system/VC10 not opt. fp64(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm + UDUt','DTL w MultTranspose + UDVt','n. points');
+
+
+ % - config: VC10 OX fp32 ---------------------------------------------
+
+
+ figure(); h = uiaxes([1 4], 'border', .09);
+
+% DTL symm gen/VC10 OX fp32(10 sets of 80 reps per n. points)
+teste0 = [1.827601,2.730641,4.195702,5.586681,7.132444,8.155504,9.635463,10.849725,11.595913,12.878048 ];
+teste1 = [3.288523,4.510648,6.598980,7.965542,9.889159,11.664613,12.818038,14.218123,14.900576,17.302199 ];
+ x = [5,15,25,35,45,55,65,75,85,95 ];
+axes(h(1,1)); plt_('DTL symm gen/VC10 OX fp32(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm','DTL w MultTranspose','n. points');
+
+
+% Full Symm factorization/VC10 OX fp32(10 sets of 80 reps per matrix size)
+teste0 = [4.331033,25.420456,82.465526,156.477157,276.115077,390.503196,548.207445,712.730019 ];
+teste1 = [6.859711,90.908248,355.148471,897.970370,1890.651109,3360.259960,5637.228496,8960.342549 ];
+ x = [5,15,25,35,45,55,65,75 ];
+axes(h(1,2)); plt_('Full Symm factorization/VC10 OX fp32(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% Symm factor. w zero blks/VC10 OX fp32(10 sets of 80 reps per matrix size)
+teste0 = [16.792739,36.979535 ];
+teste1 = [20.536507,42.922549 ];
+ x = [9,12 ];
+axes(h(1,3)); plt_('Symm factor. w zero blks/VC10 OX fp32(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% DTL homogeneous system/VC10 OX fp32(10 sets of 80 reps per n. points)
+teste0 = [52.183470,27.442984,42.379152,58.609043,64.754434,31.637444,44.195165,49.176371,18.228416,70.365947,54.760156,59.221555,60.394431,51.609034,58.454674,46.655970,54.503563,67.304633,62.988498,69.698807 ];
+teste1 = [121.833441,331.138033,106.112183,45.650707,60.076173,331.277089,44.109910,62.338326,321.685081,60.765662,38.019149,129.260967,71.925368,110.490810,143.996000,101.278725,48.061021,59.632516,344.534232,118.228730 ];
+ x = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100 ];
+axes(h(1,4)); plt_('DTL homogeneous system/VC10 OX fp32(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm + UDUt','DTL w MultTranspose + UDVt','n. points');
+
+
+ % - config: VC10 OX fp64 ---------------------------------------------
+
+
+ figure(); h = uiaxes([1 4], 'border', .09);
+
+% DTL symm gen/VC10 OX fp64(10 sets of 80 reps per n. points)
+teste0 = [1.922375,2.811344,3.949042,5.647105,7.007459,8.306976,10.562507,11.092247,12.295334,13.381714 ];
+teste1 = [3.536011,4.684883,6.875438,8.526321,9.976897,12.018877,14.025265,15.449767,16.682653,17.527753 ];
+ x = [5,15,25,35,45,55,65,75,85,95 ];
+axes(h(1,1)); plt_('DTL symm gen/VC10 OX fp64(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm','DTL w MultTranspose','n. points');
+
+
+% Full Symm factorization/VC10 OX fp64(10 sets of 80 reps per matrix size)
+teste0 = [4.847116,27.920991,89.204805,168.477410,294.447785,437.535364,577.879887,798.287071 ];
+teste1 = [6.905236,95.519050,378.398651,1053.248577,1967.784891,3723.188978,5934.645719,9218.283426 ];
+ x = [5,15,25,35,45,55,65,75 ];
+axes(h(1,2)); plt_('Full Symm factorization/VC10 OX fp64(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% Symm factor. w zero blks/VC10 OX fp64(10 sets of 80 reps per matrix size)
+teste0 = [18.180408,47.398019 ];
+teste1 = [20.552233,43.167967 ];
+ x = [9,12 ];
+axes(h(1,3)); plt_('Symm factor. w zero blks/VC10 OX fp64(10 sets of 80 reps per matrix size)', x,teste0,teste1,'UDUt Givens','UDVt Givens','matrix size');
+
+
+% DTL homogeneous system/VC10 OX fp64(10 sets of 80 reps per n. points)
+teste0 = [51.714982,58.466262,54.639723,58.939303,60.470995,59.519947,61.327683,56.836900,59.887867,60.182949,61.660425,65.950900,62.224515,65.497311,64.807822,63.393252,62.942560,64.778852,64.527640,67.655171 ];
+teste1 = [45.329966,42.735071,42.070414,49.940769,50.019816,53.355105,52.208301,48.430183,55.258856,51.923567,56.383724,52.935038,53.887741,55.524553,55.741415,55.486064,53.552929,56.440009,56.491741,59.562160 ];
+ x = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100 ];
+axes(h(1,4)); plt_('DTL homogeneous system/VC10 OX fp64(10 sets of 80 reps per n. points)', x,teste0,teste1,'DTL w cvCompleteSymm + UDUt','DTL w MultTranspose + UDVt','n. points');
