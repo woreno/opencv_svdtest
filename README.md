@@ -7,7 +7,21 @@
 //     this list of conditions and the following disclaimer in the documentation
 //     and/or other materials provided with the distribution.
 // for OpenCV licence check the attached files
-Direct Linear Transform (DLT) is method to recover the rotation and translation of object vectors relative to a projector where they had been projected. With both object vectors and the projection vectors on the projection plane, through an cross product relation between both, is possible to reach a homogeneous linear system Ax = 0, where x are the elements that form the transformation matrix. DLT is used to find R|T and homography (an R|T where the vectors object are fixed on a plane) matrices. In the first case, you get a matrix A with 2Nx12 elements, in the second case, a matrix A with 2Nx9 elements, both with a wellknow format. Moreover, this Ax = 0 can be solved in the least square sense, by finding a solution for the null space of A'A instead of A, requiring the A'A (9x9 or 12x12) product and followed by a UDU' decomposition to get a solution. However doing that product isn't necessary programatly (you had to generate the full A matrix that is, 2Nx9 or 2Nx12 before the transpose product). Once you know the format of A'A, it is possible to generate the upper triangle of the 9x9 or 12x12 A'A, and copying those elements the lower triangle.
+
+
+Direct Linear Transform (DLT) is method to recover the rotation and translation of object 
+vectors relative to a projector where they had been projected. With both object vectors 
+and the projection vectors on the projection plane, through an cross product relation 
+between both, is possible to reach a homogeneous linear system Ax = 0, where x are the 
+elements that form the transformation matrix. DLT is used to find R|T and homography 
+(an R|T where the vectors object are fixed on a plane) matrices. In the first case, you 
+get a matrix A with 2Nx12 elements, in the second case, a matrix A with 2Nx9 elements, both 
+with a wellknow format. Moreover, this Ax = 0 can be solved in the least square sense, by 
+finding a solution for the null space of A'A instead of A, requiring the A'A (9x9 or 12x12) 
+product and followed by a UDU' decomposition to get a solution. However doing that product 
+isn't necessary programatly (you had to generate the full A matrix that is, 2Nx9 or 2Nx12 before the 
+transpose product). Once you know the format of A'A, it is possible to generate the upper 
+triangle of the 9x9 or 12x12 A'A, and copying those elements the lower triangle.
 
 Here, i test the generation of A'A and factorization of symmetric matrices as in opencv.
 This test, comes from a personal question, why in opencv,
