@@ -111,8 +111,8 @@ JacobiImpl_( _Tp* A, size_t astep,
 		// calcular o seno e coseno, que apareceria
 		// na matriz de Givens para anular o valor do pivot
         _Tp y = (_Tp)((W[l] - W[k])*0.5);
-        _Tp t = std::abs(y) + hypot(p, y); // novo dx do triangulo
-        _Tp w = hypot(p, t);			   // nova hipotenusa "norma de t,p"
+        _Tp t = std::abs(y) + hypot_(p, y); // novo dx do triangulo
+        _Tp w = hypot_(p, t);			   // nova hipotenusa "norma de t,p"
         _Tp c = t/w;					   // normalização, componente x: cos
         _Tp s = p/w;					   // normalização, componente y: sin
 		

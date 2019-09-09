@@ -86,6 +86,23 @@
 // slighty modified to not use the OPENCV-API
 // excepting the basic structures
 
+template<typename _Tp> static inline _Tp hypot_(_Tp a, _Tp b)
+{
+    a = std::abs(a);
+    b = std::abs(b);
+    if( a > b )
+    {
+        b /= a;
+        return a*std::sqrt(1 + b*b);
+    }
+    if( b > 0 )
+    {
+        a /= b;
+        return b*std::sqrt(1 + a*a);
+    }
+    return 0;
+}
+
 
 template<typename _Tp> static inline _Tp* alignPtr_(_Tp* ptr, int n=(int)sizeof(_Tp))
 {
@@ -259,7 +276,6 @@ inline void completeSymm_( cv::InputOutputArray _m, bool LtoR )
             memcpy(data + (i*step + j*esz), data + (j*step + i*esz), esz);
     }
 }
-
 
 typedef void (*MulTransposedFunc)(const cv::Mat& src, cv::Mat& dst, const cv::Mat& delta, double scale);
 
@@ -455,7 +471,6 @@ MulTransposedL( const cv::Mat& srcmat, cv::Mat& dstmat, const cv::Mat& deltamat,
     }
 }
 
-
 void mulTransposed_( cv::InputArray _src, cv::OutputArray _dst, bool ata,
                      cv::InputArray _delta, double scale, int dtype )
 {
@@ -572,6 +587,7 @@ void mulTransposed_( cv::InputArray _src, cv::OutputArray _dst, bool ata,
     }
 }
 
+
 void
 cvMulTransposed_( const CvArr* srcarr, CvArr* dstarr,
                  int order, const CvArr* deltaarr CV_DEFAULT(NULL), double scale CV_DEFAULT(1.) )
@@ -583,7 +599,6 @@ cvMulTransposed_( const CvArr* srcarr, CvArr* dstarr,
     if( dst.data != dst0.data )
         dst.convertTo(dst0, dst0.type());
 }
-
 
 
 #endif 

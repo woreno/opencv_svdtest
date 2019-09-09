@@ -93,7 +93,7 @@ JacobiSVDImpl_(_Tp* At, size_t astep, _Tp* _W, _Tp* Vt, size_t vstep,
                     continue;
 
                 p *= 2;
-                double beta = a - b, gamma = hypot((double)p, beta);
+                double beta = a - b, gamma = hypot_((double)p, beta);
                 if( beta < 0 )
                 {
                     double delta = (gamma - beta)*0.5;

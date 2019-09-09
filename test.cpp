@@ -24,6 +24,13 @@
 //         C. gen DLT 9x9, 12x12 symmetric matrixes, and run UDU', UDV'
 //         D. gen DLT 12x12 for n points, and run UDU', UDV'
 
+// this test requires opencv and uses opencv "lapack.cpp" functions; 
+// almost all functions of the interest here, have been renamed with a posfix underscore
+// and located in blas.hpp (math) and udut_givens.hpp, udvt_givens.hpp (for decompositions)
+// in order to be called, tested, and compiled inline and with optimization flags altogether.
+// other opencv structures and functions not used, eg. cv::Mat, cv::Size, cv::InputArray
+// are using the normal cv:: interface.
+
 // This test, comes from a personal question, why in opencv, 
 //		implicit, manual A'A triangle + cvCompleteSymm + UDU'(eigenvv) is used 
 //      by CvHomographyEstimator::runKernel:, a DLT 9x9
