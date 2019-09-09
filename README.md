@@ -22,7 +22,7 @@ product and followed by a UDU' decomposition to get a solution, from U'.
 However programmatically, isn't necessary explicitly to do this product (this way requires to
 generate a full A matrix, that is, 2Nx9 or 2Nx12 before the proceed to transpose product A'A). 
 Once you know the format of A'A, it is possible to generate the upper triangle of the
-9x9 or 12x12 A'A, and copying those elements to the lower triangle.
+9x9 or 12x12 A'A, and copy those elements to the lower triangle.
 
 Here, i test the generation of A'A and factorization of symmetric matrices as in opencv.
 This test, comes from a personal question, why in opencv,
