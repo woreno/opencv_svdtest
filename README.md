@@ -12,11 +12,17 @@ Tests the generation and factorization of symmetric matrices with the opencv
 functions / specific for the DLT 9x9 and 12x12 system.
 warning: only tested with visual studio 10, but would be fine in linux
 (clock.hpp changes on both systems)
+
 tests:
+
         A. gen DLT 12x12 symmetric matrixes
+		
         B. gen generic nxn symmetric matrixes, and run UDU', UDV' 
+		
         C. gen DLT 9x9, 12x12 symmetric matrixes, and run UDU', UDV'
+		
         D. gen DLT 12x12 for n points, and run UDU', UDV'
+		
 
 this test requires opencv and uses opencv "lapack.cpp" functions; 
 almost all functions of the interest here, have been renamed with a posfix underscore
@@ -41,6 +47,7 @@ This test, comes from a personal question, why in opencv,
         - the DLT 12x12 triangle can be created manually as in the 9x9 case (as in runKernel)  .
 
 USE:
+
   #define USE_FP32 if you want to used floats instead of doubles
 
   i used in a project with 2 configs were _DEBUG i set no optimization flags
