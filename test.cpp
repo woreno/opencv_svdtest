@@ -234,15 +234,15 @@ void testFactorizations(bool special_=false)
 // so, oPoints: object points iPoints: projects
 // intrisic matrix and distortion doesn't matter in this test.
 #define CREATE_POINTS_AND_PROJECTIONS								\
-	cv::Mat oPoints(i, 3, CV_64F);									\
+	cv::Mat oPoints(i, 3, CV_FP);									\
 	cv::randu(oPoints, -1.5f, 1.5f);								\
-	cv::Mat iPoints(i, 2, CV_64F);									\
+	cv::Mat iPoints(i, 2, CV_FP);									\
 	FP tD[] = { 2.0f, 2.0f, 4.0f };									\
 	FP rD[] = { VL_DEG2RAD(20), 0, 0 };								\
-	cv::Mat tVec(3,1, CV_64F, tD), rVec(3,1, CV_64F, rD);			\
+	cv::Mat tVec(3,1, CV_FP, tD), rVec(3,1, CV_64F, rD);			\
 	std::vector<cv::Vec2f> projVec(i);								\
 	cv::projectPoints(oPoints, rVec, tVec, 							\
-		cv::Mat::eye(3,3,CV_64F), cv::Mat(), iPoints);				\
+		cv::Mat::eye(3,3,CV_FP), cv::Mat(), iPoints);				\
 	 
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
